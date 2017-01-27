@@ -4,8 +4,8 @@
     <link href="https://assets.juicer.io/embed.css" media="all" rel="stylesheet" type="text/css" />
     <style>
       header {
-        background-color: black;
-        font-weight: bold;
+        background-color: #002e83;
+        background-color: rgba(0, 46, 131, .85);
       }
 
       header a {
@@ -17,14 +17,33 @@
         color: gray;
       }
 
-      header .navbar-header {
-        float: none;
-        margin: 20px auto;
-        text-align: center;
+      header .navbar-brand {
+        font-size: 1.5em;
       }
 
-      header .navbar-brand {
-        float: none;
+      #hero {
+        position: relative;
+        z-index: -1;
+        background-size: cover;
+        height: 800px;
+        margin-top: -85px;
+        margin-bottom: 70px;
+        background-image: url('assets/images/dorado.jpg');
+        /* background-image: url('assets/images/marlin.jpg'); */
+        background-position: top center;
+        /* background-position: center; */
+        background-repeat: no-repeat;
+        border-bottom: 1px solid #002e83;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+        color: #0049d0;
+      }
+
+      h1 span {
+        font-weight: bold;
+        color: #002e83;
       }
 
       li.juicer, .referral {
@@ -45,9 +64,11 @@
         </div>
       </div>
     </header>
+    <div id="hero"></div>
     <div class="container">
       <div class="row">
         <div class="col-md-12">
+          <h1>YouTube <span>Channel</span></h1>
           <ul class="juicer-feed" data-feed-id="paulhtrott" data-per="6"></ul>
         </div>
       </div>
