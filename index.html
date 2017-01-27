@@ -119,6 +119,24 @@
 
     <!-- Custom js -->
     <script>
+      $(function() {
+        var marlin = { "background-image" : "url('assets/images/marlin.jpg')", "background-position" : "center" };
+        var dorado = { "background-image" : "url('assets/images/dorado.jpg')", "background-position" : "top center" };
+
+        var fadeHero = function fadeHero() {
+          $('#hero').fadeOut(5000, function() {
+            $(this).css(marlin).fadeIn(5000, function() {
+              $(this).fadeIn(5000).fadeOut(5000, function() {
+                $(this).css(dorado).fadeIn(5000, function(){
+                  fadeHero();
+                });
+              });
+            });
+          });
+        };
+
+        fadeHero();
+      });
     </script>
   </body>
 </html>
