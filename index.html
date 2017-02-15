@@ -84,6 +84,16 @@
         border-bottom: 1px solid #002e83;
       }
 
+      #hero_button {
+        position: relative;
+        top: -400px;
+        color:white;
+        text-align: center;
+        font-size: 2em;
+        background-color: #002e83;
+        background-color: rgba(0, 46, 131, .65);
+      }
+
       h1 {
         margin-bottom: 20px;
         color: #0049d0;
@@ -115,6 +125,13 @@
     <div id="hero"></div>
     <div class="container">
       <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <a id="hero_button" href="https://www.youtube.com/channel/UC-mLlr16GK3Qvas5Lg5VTvA" class="btn btn-primary btn-lg active" role="button">Check out our YouTube Channel</a>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
         <div class="col-md-12">
           <h1>YouTube <span>Channel</span></h1>
           <ul class="juicer-feed" data-feed-id="paulhtrott" data-per="6"></ul>
@@ -138,13 +155,18 @@
       $(function() {
         var marlin = { "background-image" : "url('assets/images/marlin.jpg')", "background-position" : "center" };
         var dorado = { "background-image" : "url('assets/images/dorado.jpg')", "background-position" : "top center" };
+        var lane_snapper = { "background-image" : "url('assets/images/lane_snapper.jpg')", "background-position" : "center" };
 
         var fadeHero = function fadeHero() {
           $('#hero').fadeOut(5000, function() {
             $(this).css(marlin).fadeIn(5000, function() {
               $(this).fadeIn(5000).fadeOut(5000, function() {
                 $(this).css(dorado).fadeIn(5000, function(){
-                  fadeHero();
+                   $(this).fadeIn(5000).fadeOut(5000, function() {
+                     $(this).css(lane_snapper).fadeIn(5000, function() {
+                       fadeHero();
+                     });
+                   });
                 });
               });
             });
